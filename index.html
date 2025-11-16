@@ -3,211 +3,104 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NLP — Predicted End-Sem Question Paper (70 Marks)</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <title>NLP — Predicted End-Sem Question Paper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#f6f8fb; --card:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#0f172a;
-      --container:1100px;
-    }
+    :root{--bg:#fbfdff;--paper:#ffffff;--accent:#0ea5a4;--text:#0f172a;--muted:#6b7280}
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#eef2ff 0%,var(--bg) 40%);color:#0f172a}
-    .wrap{max-width:var(--container);margin:32px auto;padding:20px}
-    .paper{background:var(--card);border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.08);padding:28px}
-    header{display:flex;align-items:flex-start;gap:20px;margin-bottom:18px}
-    .logo{width:76px;height:76px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
-    .title{flex:1}
-    .title h1{margin:0;font-size:20px;letter-spacing:0.2px}
-    .meta{display:flex;gap:12px;margin-top:6px;color:var(--muted);font-size:13px}
-    .row{display:flex;gap:18px}
-    .controls{display:flex;gap:10px}
-    button{background:transparent;border:1px solid rgba(15,23,42,0.06);padding:8px 12px;border-radius:8px;font-weight:600;cursor:pointer}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;border:none}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px}
-    .questions{padding-right:8px}
-    .sidebar{background:linear-gradient(180deg,#ffffff,#fbfdff);border-radius:10px;padding:18px;border:1px solid rgba(15,23,42,0.03)}
-    h2{font-size:16px;margin:10px 0 8px}
-    .section-title{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:8px;background:#f8fafc;border:1px dashed rgba(15,23,42,0.03);margin:12px 0}
-    ol{padding-left:20px;margin:10px 0}
-    .q{margin:12px 0;padding:12px;border-left:4px solid rgba(14,165,164,0.06);background:linear-gradient(180deg,#fff,#fcfeff);border-radius:8px}
-    .q strong{display:inline-block;width:42px}
-    .unit{margin-top:14px}
-    .flex-row{display:flex;gap:16px;align-items:center}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--text)}
+    .container{max-width:900px;margin:20px auto;padding:14px}
+    .paper{background:var(--paper);border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+    header{display:flex;gap:12px;align-items:center}
+    .badge{background:linear-gradient(135deg,var(--accent),#06b6d4);color:white;padding:10px 12px;border-radius:10px;font-weight:700}
+    h1{font-size:18px;margin:0}
+    .meta{font-size:13px;color:var(--muted);margin-top:6px}
+    .section{margin-top:14px}
+    .sec-title{display:flex;justify-content:space-between;align-items:center;background:#f7fcfb;padding:8px 12px;border-radius:8px;font-weight:600}
+    ol.simple{padding-left:16px;margin:12px 0}
+    ol.simple li{margin:8px 0;padding:8px 10px;border-radius:6px}
+    .q{display:block;padding:12px;border-radius:8px;background:linear-gradient(180deg,#fff,#fcfeff);margin:10px 0;border-left:4px solid rgba(14,165,164,0.12)}
     .muted{color:var(--muted);font-size:13px}
-    footer{margin-top:22px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
-    @media(max-width:980px){
-      .grid{grid-template-columns:1fr;}
-      .sidebar{order:2}
-      .paper{padding:18px}
-      .logo{width:56px;height:56px}
-      .title h1{font-size:18px}
-    }
-    /* printable tweaks */
-    @media print{body{background:white} .wrap{max-width:800px} .sidebar, .controls, button{display:none} .paper{box-shadow:none;border:none;padding:0}}
-    /* small helpers */
-    .divider{height:1px;background:linear-gradient(90deg,transparent,#eef2ff,transparent);margin:16px 0;border-radius:2px}
-    .pill{background:#ecfeff;padding:6px 10px;border-radius:999px;color:var(--accent-2);font-weight:600;font-size:13px}
-    .note{font-size:13px;color:var(--muted);margin-top:8px}
+    .flex{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{background:#ecfeff;padding:6px 10px;border-radius:999px;color:var(--accent);font-weight:600;font-size:13px}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+    @media(min-width:900px){.container{max-width:1100px;padding:20px}}
+    @media print{.container{max-width:800px} .badge, footer{display:none}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="paper" id="paper-area">
+  <div class="container">
+    <div class="paper" id="paper">
       <header>
-        <div class="logo">NLP</div>
-        <div class="title">
-          <h1>Natural Language Processing — Predicted End-Sem Question Paper</h1>
-          <div class="meta">
-            <div>Course: B.Tech II Sem (R23) — NLP</div>
-            <div>Duration: 3 hrs</div>
-            <div>Total Marks: <strong>70</strong></div>
-          </div>
-          <div class="note">Structure follows the exact university format: Section‑I (10×2 = 20), Section‑II (1 compulsory 5M + choose 4 out of remaining 10 questions = 50)</div>
-        </div>
-        <div class="controls">
-          <button id="printBtn">🖨 Print</button>
-          <button id="downloadBtn" class="btn-primary">⬇ Download .html</button>
+        <div class="badge">NLP</div>
+        <div>
+          <h1>Natural Language Processing — Predicted End‑Semester Question Paper</h1>
+          <div class="meta">Duration: 3 Hrs • Total Marks: 70 • Format: Section‑I (10×2=20) + Section‑II (50)</div>
         </div>
       </header>
 
-      <div class="grid">
-        <main class="questions" aria-labelledby="paper-area">
-
-          <div class="section-title">
-            <div><strong>SECTION – I</strong> <span class="muted">(10 × 2 = 20 Marks) — Answer ALL</span></div>
-            <div class="pill">Short Questions</div>
-          </div>
-
-          <ol>
-            <li>Define Natural Language Processing.</li>
-            <li>What is Tokenization?</li>
-            <li>Define Morphological Parsing.</li>
-            <li>What is a Feature Structure?</li>
-            <li>Define Entropy in language modelling.</li>
-            <li>What is Gap Threading?</li>
-            <li>Define Word Sense Ambiguity.</li>
-            <li>What is a Logical Form?</li>
-            <li>Define Machine Translation.</li>
-            <li>What is Cross-Lingual Information Retrieval (CLIR)?</li>
-          </ol>
-
-          <div class="divider"></div>
-
-          <div class="section-title">
-            <div><strong>SECTION – II</strong> <span class="muted">(50 Marks) — Q1 Compulsory + Answer any FOUR questions</span></div>
-            <div class="pill">Long Questions — 5 Marks Each</div>
-          </div>
-
-          <div class="q">
-            <strong>Q1.</strong> <span><strong>(Compulsory)</strong> Explain the different levels of language analysis with suitable examples. <span class="muted">(5M)</span></span>
-          </div>
-
-          <!-- UNIT I -->
-          <div class="unit">
-            <h2>Unit I — Introduction to Natural Language</h2>
-            <div class="q"><strong>Q2.</strong> a) Describe the applications of Natural Language Processing. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q2.</strong> b) Explain the organization of a Natural Language Understanding System. <span class="muted">(5M)</span></div>
-            <div class="muted">OR</div>
-            <div class="q"><strong>Q3.</strong> a) Explain the study of language and linguistic background for NLP. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q3.</strong> b) Write a short note on different types of language representations. <span class="muted">(5M)</span></div>
-          </div>
-
-          <!-- UNIT II -->
-          <div class="unit">
-            <h2>Unit II — Grammars & Parsing</h2>
-            <div class="q"><strong>Q4.</strong> a) Explain Top‑Down and Bottom‑Up parsing strategies. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q4.</strong> b) Describe Augmented Transition Networks (ATN). <span class="muted">(5M)</span></div>
-            <div class="muted">OR</div>
-            <div class="q"><strong>Q5.</strong> a) Explain Shannon Game, Entropy and Cross‑Entropy. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q5.</strong> b) Describe morphological analysis and the role of lexicon. <span class="muted">(5M)</span></div>
-          </div>
-
-          <!-- UNIT III -->
-          <div class="unit">
-            <h2>Unit III — Grammars for Natural Language</h2>
-            <div class="q"><strong>Q6.</strong> a) Explain Movement Phenomenon in natural language. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q6.</strong> b) Discuss Gap Threading with a suitable example. <span class="muted">(5M)</span></div>
-            <div class="muted">OR</div>
-            <div class="q"><strong>Q7.</strong> a) Explain Deterministic Parsers. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q7.</strong> b) Describe Human Preferences in Parsing. <span class="muted">(5M)</span></div>
-          </div>
-
-          <!-- UNIT IV -->
-          <div class="unit">
-            <h2>Unit IV — Semantic Interpretation & Language Modelling</h2>
-            <div class="q"><strong>Q8.</strong> a) Explain Semantic and Logical Form with examples. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q8.</strong> b) Describe Word Senses and Ambiguity with strategies to resolve them. <span class="muted">(5M)</span></div>
-            <div class="muted">OR</div>
-            <div class="q"><strong>Q9.</strong> a) Describe Language Model Adaptation. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q9.</strong> b) Explain Parameter Estimation in Language Models. <span class="muted">(5M)</span></div>
-          </div>
-
-          <!-- UNIT V -->
-          <div class="unit">
-            <h2>Unit V — Machine Translation, MLIR & Summarization</h2>
-            <div class="q"><strong>Q10.</strong> a) Explain different approaches to Machine Translation. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q10.</strong> b) Explain the structure of Anusaraka system. <span class="muted">(5M)</span></div>
-            <div class="muted">OR</div>
-            <div class="q"><strong>Q11.</strong> a) Explain Monolingual and Multilingual Information Retrieval. <span class="muted">(5M)</span></div>
-            <div class="q"><strong>Q11.</strong> b) Describe Multilingual Automatic Summarization and its evaluation. <span class="muted">(5M)</span></div>
-          </div>
-
-          <footer>
-            <div>Prepared for: <strong>Your University — Predicted Paper</strong></div>
-            <div class="muted">Good luck — practice smartly</div>
-          </footer>
-
-        </main>
-
-        <aside class="sidebar" aria-labelledby="tips">
-          <h3 id="tips">Exam Tips & Quick Guide</h3>
-          <p class="muted">Use this sidebar as a quick checklist while attempting the exam.</p>
-          <ol>
-            <li>Section‑I: 10 short answers — spend ~30 minutes.</li>
-            <li>Section‑II Q1 (compulsory): 10 minutes planning, 15–20 minutes writing.</li>
-            <li>Answer any 4 from remaining Qs — allocate ~30 mins per two questions.</li>
-            <li>Label diagrams clearly and add one short example wherever required.</li>
-          </ol>
-
-          <div style="height:10px"></div>
-          <h4 style="margin-bottom:6px">Answer structure for 5M</h4>
-          <ul style="padding-left:18px;color:var(--muted)">
-            <li>Intro (1 line) — 1 mark</li>
-            <li>Main points / steps — 3 marks</li>
-            <li>Example / limitation / conclusion — 1 mark</li>
-          </ul>
-
-          <div style="height:12px"></div>
-          <h4>Quick revision topics</h4>
-          <p class="muted">N‑grams, ATN, Feature structures, Gap threading, Thematic roles, LM adaptation, MT approaches, CLIR, MLIR, Multilingual summarization.</p>
-
-          <div style="height:12px"></div>
-          <button id="toggleNotes">Toggle Printable View</button>
-        </aside>
+      <!-- SECTION I -->
+      <div class="section">
+        <div class="sec-title"><span>SECTION – I</span><span class="pill">10 × 2 = 20 Marks • Answer ALL</span></div>
+        <ol class="simple">
+          <li>Define Natural Language Processing.</li>
+          <li>What is Tokenization?</li>
+          <li>Define Morphological Parsing.</li>
+          <li>What is a Feature Structure?</li>
+          <li>Define Entropy in language modelling.</li>
+          <li>What is Gap Threading?</li>
+          <li>Define Word Sense Ambiguity.</li>
+          <li>What is a Logical Form?</li>
+          <li>Define Machine Translation.</li>
+          <li>What is Cross‑Lingual Information Retrieval (CLIR)?</li>
+        </ol>
       </div>
 
+      <!-- SECTION II -->
+      <div class="section">
+        <div class="sec-title"><span>SECTION – II</span><span class="pill">50 Marks • Q1 compulsory + Answer any 4</span></div>
+
+        <div class="q"><strong>Q1 (Compulsory)</strong> — Explain the different levels of language analysis with suitable examples. <span class="muted">(5M)</span></div>
+
+        <h3 style="margin-top:12px">Unit I — Introduction to Natural Language</h3>
+        <div class="q"><strong>Q2.</strong> a) Describe the applications of Natural Language Processing. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q2.</strong> b) Explain the organization of a Natural Language Understanding System. <span class="muted">(5M)</span></div>
+
+        <div class="q"><strong>Q3.</strong> a) Explain the study of language and linguistic background for NLP. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q3.</strong> b) Write a short note on different types of language representations. <span class="muted">(5M)</span></div>
+
+        <h3 style="margin-top:12px">Unit II — Grammars & Parsing</h3>
+        <div class="q"><strong>Q4.</strong> a) Explain Top‑Down and Bottom‑Up parsing strategies. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q4.</strong> b) Describe Augmented Transition Networks (ATN). <span class="muted">(5M)</span></div>
+
+        <div class="q"><strong>Q5.</strong> a) Explain Shannon Game, Entropy and Cross‑Entropy. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q5.</strong> b) Describe morphological analysis and the role of lexicon. <span class="muted">(5M)</span></div>
+
+        <h3 style="margin-top:12px">Unit III — Grammars for Natural Language</h3>
+        <div class="q"><strong>Q6.</strong> a) Explain Movement Phenomenon in natural language. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q6.</strong> b) Discuss Gap Threading with a suitable example. <span class="muted">(5M)</span></div>
+
+        <div class="q"><strong>Q7.</strong> a) Explain Deterministic Parsers. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q7.</strong> b) Describe Human Preferences in Parsing. <span class="muted">(5M)</span></div>
+
+        <h3 style="margin-top:12px">Unit IV — Semantic Interpretation & Language Modelling</h3>
+        <div class="q"><strong>Q8.</strong> a) Explain Semantic and Logical Form with examples. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q8.</strong> b) Describe Word Senses and Ambiguity with strategies to resolve them. <span class="muted">(5M)</span></div>
+
+        <div class="q"><strong>Q9.</strong> a) Describe Language Model Adaptation. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q9.</strong> b) Explain Parameter Estimation in Language Models. <span class="muted">(5M)</span></div>
+
+        <h3 style="margin-top:12px">Unit V — Machine Translation, MLIR & Summarization</h3>
+        <div class="q"><strong>Q10.</strong> a) Explain different approaches to Machine Translation. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q10.</strong> b) Explain the structure of Anusaraka system. <span class="muted">(5M)</span></div>
+
+        <div class="q"><strong>Q11.</strong> a) Explain Monolingual and Multilingual Information Retrieval. <span class="muted">(5M)</span></div>
+        <div class="q"><strong>Q11.</strong> b) Describe Multilingual Automatic Summarization and its evaluation. <span class="muted">(5M)</span></div>
+
+      </div>
+
+      <footer>Prepared as a clean, mobile‑friendly predicted question paper.</footer>
     </div>
   </div>
-
-  <script>
-    // Print and download handlers
-    document.getElementById('printBtn').addEventListener('click',function(){window.print()});
-    document.getElementById('downloadBtn').addEventListener('click',function(){
-      const html = '<!doctype html>' + document.documentElement.outerHTML;
-      const blob = new Blob([html],{type:'text/html'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'NLP_End_Sem_Predicted_Paper.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    });
-
-    // Toggle simple printable view
-    const toggle = document.getElementById('toggleNotes');
-    toggle.addEventListener('click',function(){
-      document.querySelector('.sidebar').classList.toggle('hidden');
-      if(document.querySelector('.sidebar').classList.contains('hidden')){
-        toggle.textContent = 'Show Printable View';
-      } else { toggle.textContent = 'Toggle Printable View'; }
-    });
-  </script>
 </body>
 </html>
